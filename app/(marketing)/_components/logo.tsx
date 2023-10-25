@@ -1,11 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-type LogoProps = {
-  small?: boolean;
-};
-
-const Logo: React.FC<LogoProps> = ({ small = false }) => {
+const Logo = ({ small = false }) => {
   const width = small ? "40" : "200";
   const height = "40";
 
