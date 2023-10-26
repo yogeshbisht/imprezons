@@ -1,23 +1,48 @@
 "use client";
 
+import Link from "next/link";
+import { SignInButton } from "@clerk/nextjs";
+import { useConvexAuth } from "convex/react";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/spinner";
 
 export const Heading = () => {
+  const { isAuthenticated, isLoading } = useConvexAuth();
+
   return (
     <div className="max-w-3xl space-y-4">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-        Create, Organize, Achieve.<br/>Welcome to <span className="underline">Imprezion</span>
+        Create, Organize, Achieve.
+        <br />
+        Welcome to <span className="underline">Imprezion</span>
       </h1>
       <h3 className="text-base sm:text-xl md:text-2xl font-medium">
         Versatile workspace where you can create,
         <br />
         organize, and achieve like never before.
       </h3>
-      <Button>
-        Enter Imprezion<ArrowRight size={16} className="ml-1"/>
-      </Button>
+      {isLoading && (
+        <div className="w-full flex items-center justify-center">
+          <Spinner size="lg" />
+        </div>
+      )}
+      {isAuthenticated && !isLoading && (
+        <Button asChild>
+          <Link href="/documents">
+            Enter Imprezion
+            <ArrowRight size={16} className="ml-1" />
+          </Link>
+        </Button>
+      )}
+      {!isAuthenticated && !isLoading && (
+        <SignInButton mode="modal">
+          <Button>
+            Get Imprezion Free <ArrowRight size={16} className="ml-1" />
+          </Button>
+        </SignInButton>
+      )}
     </div>
   );
 };
