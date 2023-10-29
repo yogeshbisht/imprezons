@@ -6,13 +6,13 @@ const Heroes = () => {
       <div className="flex items-center">
         <div className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:h-[400px] md:w-[400px]">
           <Image
-            src="/images/documents.png"
+            src="https://picsum.photos/400"
             fill
             className="object-contain dark:hidden"
             alt="Documents"
           />
           <Image
-            src="/images/documents-dark.png"
+            src="https://picsum.photos/400"
             fill
             className="object-contain hidden dark:block"
             alt="Documents"
@@ -20,13 +20,13 @@ const Heroes = () => {
         </div>
         <div className="relative h-[400px] w-[400px] hidden md:block">
           <Image
-            src="/images/reading.png"
+            src="https://picsum.photos/400"
             fill
             className="object-contain dark:hidden"
             alt="Reading"
           />
           <Image
-            src="/images/reading-dark.png"
+            src="https://picsum.photos/400"
             fill
             className="object-contain hidden dark:block"
             alt="Reading"
