@@ -1,13 +1,15 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { useConvexAuth } from "convex/react";
+import { LayoutDashboardIcon } from "lucide-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+
 import Logo from "./logo";
+import { cn } from "@/lib/utils";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { ModeToggle } from "@/components/mode-toggle";
-import { useConvexAuth } from "convex/react";
-import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Spinner } from "@/components/spinner";
 
 export const Navbar = () => {
@@ -24,27 +26,23 @@ export const Navbar = () => {
       <Logo />
       <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
         {isLoading && <Spinner />}
+        <ModeToggle />
         {!isAuthenticated && !isLoading && (
-          <>
-            <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
-                Log In
-              </Button>
-            </SignInButton>
-            <SignInButton mode="modal">
-              <Button size="sm">Get Imprezion Free</Button>
-            </SignInButton>
-          </>
+          <SignInButton mode="modal">
+            <Button variant="outline">Log In</Button>
+          </SignInButton>
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter Imprezion</Link>
+            <Button variant="outline" asChild>
+              <Link href="/documents">
+                <LayoutDashboardIcon className="mr-2" size={16} />
+                Dashboard
+              </Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>
         )}
-        <ModeToggle />
       </div>
     </div>
   );

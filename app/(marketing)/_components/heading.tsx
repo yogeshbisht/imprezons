@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { SignInButton } from "@clerk/clerk-react";
 import { useConvexAuth } from "convex/react";
-import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
+import { LayoutDashboard } from "lucide-react";
 
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
 
   return (
     <div className="max-w-3xl space-y-4">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-standard">
         Create, Organize, Achieve.
         <br />
         Welcome to <span className="underline">Imprezion</span>
@@ -31,16 +31,14 @@ export const Heading = () => {
       {isAuthenticated && !isLoading && (
         <Button asChild>
           <Link href="/documents">
-            Enter Imprezion
-            <ArrowRight size={16} className="ml-1" />
+            <LayoutDashboard className="mr-2" size={16} />
+            Go to Dashboard
           </Link>
         </Button>
       )}
       {!isAuthenticated && !isLoading && (
         <SignInButton mode="modal">
-          <Button>
-            Get Imprezion Free <ArrowRight size={16} className="ml-1" />
-          </Button>
+          <Button>Get Free Imprezion</Button>
         </SignInButton>
       )}
     </div>
