@@ -1,24 +1,34 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
-const Logo = ({ small = false }) => {
-  const width = small ? "40" : "200";
-  const height = "40";
+import Image from "next/image";
+import useMediaQuery from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
+
+const Logo = ({ small = false }: { small?: boolean }) => {
+  const smallScreen = useMediaQuery("(max-width: 399px)");
+  const isMobile = useMediaQuery("(max-width: 639px)");
+
+  if (smallScreen) {
+    return null;
+  }
 
   return (
-    <div className="hidden md:flex items-center gap-x-2">
+    <div
+      className={cn("flex items-center gap-x-2 relative h-10", {
+        "w-10": small || isMobile,
+        "w-40": !small && !isMobile,
+      })}
+    >
       <Image
-        src={small ? "/logo-small.svg" : "/logo.svg"}
-        height={height}
-        width={width}
+        src={small || isMobile ? "/logo-small.svg" : "/logo.svg"}
         alt="Logo"
-        className="dark:hidden"
+        fill
+        className="block dark:hidden"
       />
       <Image
-        src={small ? "/logo-small-dark.svg" : "/logo-dark.svg"}
-        height={height}
-        width={width}
+        src={small || isMobile ? "/logo-small-dark.svg" : "/logo-dark.svg"}
         alt="Logo"
+        fill
         className="hidden dark:block"
       />
     </div>

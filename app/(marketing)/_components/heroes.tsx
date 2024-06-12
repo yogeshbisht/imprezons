@@ -4,31 +4,19 @@ const Heroes = () => {
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl">
       <div className="flex items-center">
-        <div className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:h-[400px] md:w-[400px]">
+        <div className="relative w-[300px] h-[300px] md:hidden">
           <Image
-            src="https://picsum.photos/400"
+            src="https://picsum.photos/300"
             fill
-            className="object-contain dark:hidden"
-            alt="Documents"
-          />
-          <Image
-            src="https://picsum.photos/400"
-            fill
-            className="object-contain hidden dark:block"
+            className="object-contain"
             alt="Documents"
           />
         </div>
-        <div className="relative h-[400px] w-[400px] hidden md:block">
+        <div className="relative h-[300px] w-[600px] hidden md:block">
           <Image
-            src="https://picsum.photos/400"
+            src="https://picsum.photos/600/300"
             fill
-            className="object-contain dark:hidden"
-            alt="Reading"
-          />
-          <Image
-            src="https://picsum.photos/400"
-            fill
-            className="object-contain hidden dark:block"
+            className="object-contain"
             alt="Reading"
           />
         </div>

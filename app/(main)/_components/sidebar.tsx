@@ -12,11 +12,11 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { useMutation } from "convex/react";
-import { useMediaQuery } from "usehooks-ts";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState, useCallback } from "react";
 
 import { cn } from "@/lib/utils";
+import useMediaQuery from "@/hooks/use-media-query";
 import { api } from "@/convex/_generated/api";
 import {
   Popover,
