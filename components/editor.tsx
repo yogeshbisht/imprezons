@@ -1,9 +1,11 @@
 "use client";
 
+import "@blocknote/core/fonts/inter.css";
 import { useTheme } from "next-themes";
-import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
-import { BlockNoteView, useBlockNote } from "@blocknote/react";
-import "@blocknote/core/style.css";
+import { BlockNoteView } from "@blocknote/mantine";
+import { PartialBlock, BlockNoteEditor } from "@blocknote/core";
+import { useCreateBlockNote } from "@blocknote/react";
+import "@blocknote/mantine/style.css";
 
 import { useEdgeStore } from "@/lib/edgestore";
 
@@ -25,21 +27,19 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
     return response.url;
   };
 
-  const editor: BlockNoteEditor = useBlockNote({
-    editable,
+  const editor: BlockNoteEditor = useCreateBlockNote({
     initialContent: initialContent
       ? (JSON.parse(initialContent) as PartialBlock[])
       : undefined,
-    onEditorContentChange: (editor) => {
-      onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
-    },
     uploadFile: handleUpload,
   });
 
   return (
     <div>
       <BlockNoteView
+        editable={editable}
         editor={editor}
+        onChange={() => onChange(JSON.stringify(editor.document, null, 2))}
         theme={resolvedTheme === "dark" ? "dark" : "light"}
       />
     </div>
