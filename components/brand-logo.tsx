@@ -4,7 +4,7 @@ import Image from "next/image";
 import useMediaQuery from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
 
-const Logo = ({ small = false }: { small?: boolean }) => {
+const BrandLogo = ({ small = false }: { small?: boolean }) => {
   const smallScreen = useMediaQuery("(max-width: 399px)");
   const isMobile = useMediaQuery("(max-width: 639px)");
 
@@ -14,9 +14,9 @@ const Logo = ({ small = false }: { small?: boolean }) => {
 
   return (
     <div
-      className={cn("flex items-center gap-x-2 relative h-10", {
+      className={cn("flex items-center gap-x-2 relative h-10 cursor-pointer", {
         "w-10": small || isMobile,
-        "w-40": !small && !isMobile,
+        "w-40": !small && !isMobile
       })}
     >
       <Image
@@ -35,4 +35,4 @@ const Logo = ({ small = false }: { small?: boolean }) => {
   );
 };
 
-export default Logo;
+export default BrandLogo;

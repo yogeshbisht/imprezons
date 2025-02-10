@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 
-import { ConvexClientProvider } from "@/components/providers/convex-client-provider";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { ModalProvider } from "@/components/providers/modal-provider";
+import { ConvexClientProvider } from "@/app/providers/convex-client-provider";
+import { ThemeProvider } from "@/app/providers/theme-provider";
+import { ModalProvider } from "@/app/providers/modal-provider";
 import { EdgeStoreProvider } from "@/lib/edgestore";
 
+import { BRAND_NAME } from "./constants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Imprezion",
+  title: BRAND_NAME,
   description:
     "Versatile workspace where you can create, organize, and achieve like never before.",
   icons: {
@@ -20,19 +21,19 @@ export const metadata: Metadata = {
       {
         media: "(prefers-color-scheme: light)",
         url: "/logo.svg",
-        href: "/logo.svg",
+        href: "/logo.svg"
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/logo-dark.svg",
-        href: "/logo-dark.svg",
-      },
-    ],
-  },
+        href: "/logo-dark.svg"
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
@@ -46,7 +47,7 @@ export default function RootLayout({
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
-              storageKey="imprezion-theme"
+              storageKey="imprezons-theme"
             >
               <Toaster position="bottom-center" />
               <ModalProvider />

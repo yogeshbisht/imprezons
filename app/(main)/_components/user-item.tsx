@@ -2,6 +2,7 @@
 
 import { useUser } from "@clerk/clerk-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { BRAND_NAME } from "@/app/constants";
 
 const UserItem = () => {
   const { user } = useUser();
@@ -12,7 +13,7 @@ const UserItem = () => {
         <AvatarImage src={user?.imageUrl} />
       </Avatar>
       <div className="text-start font-medium line-clamp-1 mt-4">
-        {user?.fullName}&apos;s Imprezion
+        {user?.fullName}&apos;s {BRAND_NAME}
       </div>
       <div className="text-xs text-muted-foreground">
         ({user?.emailAddresses[0].emailAddress})

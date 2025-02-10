@@ -1,9 +1,9 @@
-import Logo from "./logo";
+import BrandLogo from "../brand-logo";
 
 export const Footer = () => {
   return (
     <div className="flex items-center w-full px-12 py-6 bg-background z-50 dark:bg-gray-950">
-      <Logo small />
+      <BrandLogo small />
       <div className="w-full justify-end flex items-center gap-x-2 text-muted-foreground">
         <a
           href="https://yogeshbisht.com"

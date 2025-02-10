@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import { useSettings } from "@/hooks/use-settings";
 import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/mode-toggle";
+import { BRAND_NAME } from "@/app/constants";
 
 const SettingsModal = () => {
   const settings = useSettings();
@@ -18,7 +19,7 @@ const SettingsModal = () => {
           <div className="flex flex-col gap-y-1">
             <Label>Appearance</Label>
             <span className="text-[0.8rem] text-muted-foreground">
-              Customize how Imprezion looks on your device
+              Customize how {BRAND_NAME} looks on your device
             </span>
           </div>
           <ModeToggle />

@@ -5,7 +5,7 @@ import { useConvexAuth } from "convex/react";
 import { LayoutDashboardIcon } from "lucide-react";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 
-import Logo from "./logo";
+import BrandLogo from "@/components/brand-logo";
 import { cn } from "@/lib/utils";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -23,7 +23,7 @@ export const Navbar = () => {
         scrolled && "border-b shadow-md"
       )}
     >
-      <Logo />
+      <BrandLogo />
       <div className="justify-end w-full flex items-center gap-x-2">
         {isLoading && <Spinner />}
         <ModeToggle />
@@ -40,7 +40,7 @@ export const Navbar = () => {
                 Dashboard
               </Link>
             </Button>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
           </>
         )}
       </div>
