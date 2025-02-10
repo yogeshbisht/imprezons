@@ -20,7 +20,7 @@ const BrandLogo = ({ small = false }: { small?: boolean }) => {
       })}
     >
       <Image
-        src={small || isMobile ? "/logo-small.svg" : "/logo.svg"}
+        src={small || isMobile ? "/logo-small.svg" : "/logo-light.svg"}
         alt="Logo"
         fill
         className="block dark:hidden"
