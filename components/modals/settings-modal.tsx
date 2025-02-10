@@ -3,7 +3,7 @@
 import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import { useSettings } from "@/hooks/use-settings";
 import { Label } from "@/components/ui/label";
-import { ModeToggle } from "@/components/mode-toggle";
+import ThemeToggle from "@/components/theme-toggle";
 import { BRAND_NAME } from "@/app/constants";
 
 const SettingsModal = () => {
@@ -22,7 +22,7 @@ const SettingsModal = () => {
               Customize how {BRAND_NAME} looks on your device
             </span>
           </div>
-          <ModeToggle />
+          <ThemeToggle />
         </div>
       </DialogContent>
     </Dialog>

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { SignInButton } from "@clerk/clerk-react";
 import { useConvexAuth } from "convex/react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
 import { LayoutDashboard } from "lucide-react";
 import { BRAND_NAME } from "@/app/constants";
-import Image from "next/image";
 
 const Hero = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -42,15 +42,22 @@ const Hero = () => {
           </SignInButton>
         )}
       </div>
-      <div className="flex flex-col items-center justify-center rounded-2xl overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center rounded-2xl overflow-hidden">
         <Image
-          src="/hero-image.png"
+          src="/hero-image-light.png"
           width={1000}
           height={1000}
-          className="object-cover"
+          className="object-cover block dark:hidden"
           alt="Documents"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+        <Image
+          src="/hero-image-dark.png"
+          width={1000}
+          height={1000}
+          className="object-cover hidden dark:block"
+          alt="Documents"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t dark:from-black from-white to-transparent" />
       </div>
     </>
   );
