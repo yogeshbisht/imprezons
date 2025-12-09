@@ -31,7 +31,7 @@ import Item from "./item";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 import Navbar from "./navbar";
-import { SignOutButton } from "@clerk/clerk-react";
+import { SignOutButton } from "@clerk/nextjs";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -157,7 +157,7 @@ const Sidebar = () => {
         </div>
         <div>
           <UserItem />
-          <hr className="h-0.5 mb-4 mx-4 bg-gradient-to-r from-transparent via-neutral-950 dark:via-neutral-50 to-transparent mt-2" />
+          <hr className="h-0.5 mb-4 mx-4 bg-linear-to-r from-transparent via-neutral-950 dark:via-neutral-50 to-transparent mt-2" />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="New page" icon={PlusCircle} onClick={handleCreate} />
         </div>

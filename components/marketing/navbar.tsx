@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useConvexAuth } from "convex/react";
 import { LayoutDashboardIcon } from "lucide-react";
-import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 import BrandLogo from "@/components/brand-logo";
 import { cn } from "@/lib/utils";

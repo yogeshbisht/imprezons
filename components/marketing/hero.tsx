@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton } from "@clerk/nextjs";
 import { useConvexAuth } from "convex/react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
@@ -57,7 +57,7 @@ const Hero = () => {
           className="object-cover hidden dark:block"
           alt="Documents"
         />
-        <div className="absolute inset-0 bg-gradient-to-t dark:from-black from-white to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t dark:from-black from-white to-transparent" />
       </div>
     </>
   );
