@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 import ConvexClientProvider from "@/app/providers/convex-client-provider";
 import { ThemeProvider } from "@/app/providers/theme-provider";
