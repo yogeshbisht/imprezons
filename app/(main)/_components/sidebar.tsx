@@ -31,7 +31,7 @@ import Item from "./item";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
 import Navbar from "./navbar";
-import { SignOutButton } from "@clerk/clerk-react";
+import { SignOutButton } from "@clerk/nextjs";
 
 const Sidebar = () => {
   const router = useRouter();

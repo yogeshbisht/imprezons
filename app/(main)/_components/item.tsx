@@ -11,7 +11,7 @@ import {
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/nextjs";
 
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
@@ -99,9 +99,7 @@ const Item = ({
     <div
       onClick={onClick}
       role="button"
-      style={{
-        paddingLeft: level ? `${level * 12 + 12}px` : "12px",
-      }}
+      style={{ paddingLeft: level ? `${level * 12 + 12}px` : "12px" }}
       className={cn(
         "group min-h-[36px] py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium",
         active && "bg-primary/5 text-primary"
@@ -170,9 +168,7 @@ const Item = ({
 Item.Skeleton = function ItemSkeleton({ level }: { level?: number }) {
   return (
     <div
-      style={{
-        paddingLeft: level ? `${level * 12 + 25}px` : "12px",
-      }}
+      style={{ paddingLeft: level ? `${level * 12 + 25}px` : "12px" }}
       className="flex gap-x-2 py-[3px]"
     >
       <Skeleton className="h-4 w-4" />

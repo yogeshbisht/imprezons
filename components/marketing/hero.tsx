@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton } from "@clerk/nextjs";
 import { useConvexAuth } from "convex/react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
