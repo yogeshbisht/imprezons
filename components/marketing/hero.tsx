@@ -57,7 +57,7 @@ const Hero = () => {
           className="object-cover hidden dark:block"
           alt="Documents"
         />
-        <div className="absolute inset-0 bg-gradient-to-t dark:from-black from-white to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t dark:from-black from-white to-transparent" />
       </div>
     </>
   );

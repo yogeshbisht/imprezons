@@ -157,7 +157,7 @@ const Sidebar = () => {
         </div>
         <div>
           <UserItem />
-          <hr className="h-0.5 mb-4 mx-4 bg-gradient-to-r from-transparent via-neutral-950 dark:via-neutral-50 to-transparent mt-2" />
+          <hr className="h-0.5 mb-4 mx-4 bg-linear-to-r from-transparent via-neutral-950 dark:via-neutral-50 to-transparent mt-2" />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="New page" icon={PlusCircle} onClick={handleCreate} />
         </div>
